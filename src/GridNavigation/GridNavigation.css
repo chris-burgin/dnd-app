@@ -1,49 +1,54 @@
 .GridNavigation {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100vh;
-  width: 100vw;
-}
-
-.GridNavigation > div {
   display: flex;
-  justify-content: center;
+  flex-flow: column;
   align-items: center;
+  justify-content: center;
 }
 
-.GridNavigation > div span {
-  background-color: #eee;
-  padding: 5px;
+.GridNavigation h3 {
+  font-size: 14px;
+  color: #eee;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 5px;
+  text-align: center
+}
+
+.GridNavigation .location {
+  max-width: 98px;
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  text-align: right;
+  color: #eee;
+  opacity: .6;
+  font-weight: 200;
+}
+
+
+.GridNavigation .wrapper {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.GridNavigation .wrapper > div {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #22272B;
+  border: 1px solid #30373E;
   cursor: pointer;
 }
 
-.left {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+.GridNavigation .wrapper > div:hover {
+  background-color: #EB935B;
 }
 
-.right {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
 
-.top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.GridNavigation .wrapper > div i {
+  color: white;
 }

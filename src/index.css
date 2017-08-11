@@ -7,4 +7,16 @@ body {
   padding: 0;
   height: 100%;
   overflow: hidden;
+  font-family: Open Sans;
+  font-size: 14px;
+}
+
+input {
+  border: 1px solid #B1B1B1;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+input:disabled {
+  opacity: .3;
 }

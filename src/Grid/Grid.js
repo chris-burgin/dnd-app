@@ -28,13 +28,10 @@ class Grid extends Component {
     this.updateBoardPosition = this.updateBoardPosition.bind(this)
   }
 
-  updateBoardPosition([vM, hM]) {
-    // get position
-    const {position} = this.state
-
+  updateBoardPosition(position) {
     // update position
     this.setState({
-      position: [position[0] + vM, position[1] + hM]
+      position: position
     })
   }
 
@@ -44,23 +41,23 @@ class Grid extends Component {
 
     return (
       <div className="Grid">
-        {/* Navigation Component */}
-        <GridNavigation
-          updateBoardPosition={this.updateBoardPosition}/>
+        <div className="Controls">
+          <GridNavigation
+            position={position}
+            updateBoardPosition={this.updateBoardPosition}/>
+        </div>
 
-        <table className="Board">
-          <tbody>
-             {createArray(position[0], position[0]+ 30).map((i) => 
-              <tr key={i}>
-                 {createArray(position[1], position[1] + 30).map((i2) => 
-                    <td key={i2}>
+        <div className="Board">
+             {createArray(position[0], position[0]+ 50).map((i) => 
+              <div key={i} className="row">
+                 {createArray(position[1], position[1] + 50).map((i2) => 
+                    <div key={i2} className="item">
                       {i} : {i2}
-                    </td>
+                    </div>
                   )}
-              </tr>
+              </div>
             )}
-          </tbody>
-        </table>
+        </div>
       </div>
     );
   }
